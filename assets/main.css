@@ -5,6 +5,8 @@ Gray: #ececec;
 Brand Orange: #e8862e;
 Secondary Orange: #d16d11;
 
+Default transition for background: 0.25s;
+
 */
 
 /* Basics */
@@ -36,6 +38,7 @@ nav.fixed {
   position: fixed;
   top: 0;
   bottom: unset;
+  z-index: 1;
 }
 
 section {
@@ -57,15 +60,57 @@ h1, h2, h3 {
   font-weight: 400;
 }
 
+p {
+  line-height: 1.5em;
+}
+
+
+svg {
+  display: inline;
+  height: 1.5em;
+  width: 1.5em;
+  vertical-align: middle;
+}
+
 a {
   color: #e8862e;
   text-decoration: none;
   font-weight: bold;
+  transition: background-color 0.25s, color 0.25s;
 }
 
-a:visited, a:hover {
+a svg path, a svg polygon {
+  fill: #373938;
+  transition: fill 0.25s;
+}
+
+
+a:visited, a:hover{
   color: #d16d11;
 }
+
+ul a,
+ul a:visited {
+  color: #373938;
+  font-weight: bold;
+}
+
+ul a:hover {
+  color: #e8862e;
+}
+
+ul a:hover svg path, ul a:hover svg polygon {
+  fill: #e8862e;
+}
+
+ul.row li{
+  margin-right: 1.5em;
+}
+
+ul a svg {
+  margin-right: 0.25em;
+}
+
 
 
 /* specific entities */
@@ -78,21 +123,17 @@ header img {
   min-width: 250px;
 }
 
-header a.cta {
+header a.cta,
+header a.cta:visited {
   color: white;
   background-color: #e8862e;
   text-transform: uppercase;
   padding: 0.75em 1.5em;
   position: relative;
+  transition: background-color 0.25s;
 }
 
-header a.cta::hover {
-  color: white;
-  background-color: #d16d11;
-}
-
-
-header a.cta::after {
+header a.cta:after {
   display: inline-block;
   content: '>';
   color: white;
@@ -105,10 +146,25 @@ header a.cta::after {
   text-align: center;
   line-height: 1.75em;
   font-size: 1.5em;
+  transition: background-color 0.25s;
 }
+
+header a.cta:hover {
+  background-color: #d16d11;
+}
+
+header a.cta:hover:after {
+  background-color: #e8862e;
+}
+
 
 nav > * {
   margin: 0 0.5em;
+}
+
+nav svg {
+  width: 2em;
+  height: 2em;
 }
 
 nav .logo {
@@ -121,10 +177,6 @@ nav a:hover, nav a.hl {
   color: #e8862e;
 }
 
-nav svg {
-  height: 2em;
-  vertical-align: middle;
-}
 
 nav a:hover svg polygon {
   fill: #e8862e;
@@ -140,4 +192,49 @@ nav a:hover svg polygon {
 
 .main p {
   max-width: 50em;
+}
+
+.main ul {
+  max-width: 80em;
+}
+
+.main ul.row li {
+  padding: 0.5em 1em;
+  text-align: center;
+  margin: 0;
+}
+
+.main li:not(:first-child) {
+  /*border-left: 1px solid #373938;*/
+  border-width: 0;
+  border-left-width: 1px;
+  border-style: solid;
+  -webkit-border-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), #c1c1c1, #676868, #c1c1c1,  rgba(0, 0, 0, 0)) 1 100%;
+  -moz-border-image: -moz-linear-gradient(rgba(0, 0, 0, 0), #c1c1c1, #676868, #c1c1c1,  rgba(0, 0, 0, 0)) 1 100%;
+  -o-border-image: -o-linear-gradient(rgba(0, 0, 0, 0), #c1c1c1, #676868, #c1c1c1,  rgba(0, 0, 0, 0)) 1 100%;
+  border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #c1c1c1, #676868, #c1c1c1,  rgba(0, 0, 0, 0)) 1 100%;
+}
+
+.main li svg {
+  width: 3em;
+  height: 3em;
+}
+
+
+.cur-status {
+  padding: 2em;
+  margin-left: 3em;
+  border: 1px;
+  border-right-width: 0px;
+  /*border-left-width: 1px;*/
+  border-style: solid;
+  position: relative;
+  -webkit-border-image: -webkit-linear-gradient(#676868, #c1c1c1,  rgba(0, 0, 0, 0)) 100 100 stretch;
+  -moz-border-image: -moz-linear-gradient(#676868, #c1c1c1,  rgba(0, 0, 0, 0)) 100 100 stretch;
+  -o-border-image: -o-linear-gradient(#676868, #c1c1c1,  rgba(0, 0, 0, 0)) 100 100 stretch;
+  border-image: linear-gradient(90deg, #676868, #c1c1c1,  rgba(0, 0, 0, 0)) 100 100 stretch;
+}
+
+.cur-status ul li {
+  margin: 0.5em 0.25em;
 }
