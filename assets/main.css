@@ -1,0 +1,34 @@
+
+/* Basics */
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: 333;
+}
+
+section {
+  padding: 2em;
+}
+
+section:nth-child(2n+1) {
+  background-color:gray;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+
+/* specific entities */
+
+.main {
+  text-align: center;
+  padding: 2em 4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+
+.main p {
+  max-width: 50em;
+}
