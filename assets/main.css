@@ -1,8 +1,23 @@
 
+/*
+Black: #373938;
+Gray: #ececec;
+Brand Orange: #e8862e;
+Secondary Orange: #d16d11;
+
+*/
+
 /* Basics */
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  color: 333;
+  color: #373938;
+}
+
+header {
+  /*background-color: */
+   /*make the pattern in #e1e1e1*/
+  background: #ececec url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAIElEQVQYlWNgIAU8fPjw/+vXr/8TVPj69WviFI4CXAAAw7UO42A14IgAAAAASUVORK5CYII=) repeat;
+  align-items: center;
 }
 
 section {
@@ -10,7 +25,7 @@ section {
 }
 
 section:nth-child(2n+1) {
-  background-color:gray;
+  background-color: #ececec;
 }
 
 ul {
@@ -18,8 +33,56 @@ ul {
   padding-left: 0;
 }
 
+h1, h2, h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+a {
+  color: #e8862e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:visited, a:hover {
+  color: #d16d11;
+}
+
 
 /* specific entities */
+
+header img {
+  min-width: 250px;
+}
+
+header a.cta {
+  color: white;
+  background-color: #e8862e;
+  text-transform: uppercase;
+  padding: 0.75em 1.5em;
+  position: relative;
+}
+
+header a.cta::hover {
+  color: white;
+  background-color: #d16d11;
+}
+
+
+header a.cta::after {
+  display: inline-block;
+  content: '>';
+  color: white;
+  margin-left: 1em;
+  background-color: #d16d11;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2em;
+  text-align: center;
+  line-height: 1.75em;
+  font-size: 1.5em;
+}
 
 .main {
   text-align: center;
