@@ -20,6 +20,19 @@ header {
   align-items: center;
 }
 
+nav {
+  justify-content: flex-end;
+  background: white;
+  padding: 1em 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+nav.fixed {
+  position: fixed;
+}
+
 section {
   padding: 2em;
 }
@@ -82,6 +95,13 @@ header a.cta::after {
   text-align: center;
   line-height: 1.75em;
   font-size: 1.5em;
+}
+
+nav .logo {
+  flex-grow: 1;
+}
+nav a, nav a:visited {
+  color: #373938;
 }
 
 .main {
