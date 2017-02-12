@@ -17,24 +17,30 @@ header {
   /*background-color: */
    /*make the pattern in #e1e1e1*/
   background: #ececec url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAIElEQVQYlWNgIAU8fPjw/+vXr/8TVPj69WviFI4CXAAAw7UO42A14IgAAAAASUVORK5CYII=) repeat;
-  align-items: center;
+  position: relative;
+  padding-bottom: 5.5em;
 }
 
 nav {
   justify-content: flex-end;
   background: white;
   padding: 1em 0;
-  top: 0;
+  border-bottom: 1px solid #ececec;
+  position: absolute;
+  bottom: 0;
   left: 0;
   right: 0;
 }
 
 nav.fixed {
   position: fixed;
+  top: 0;
+  bottom: unset;
 }
 
 section {
   padding: 2em;
+  padding-top: 5em;
 }
 
 section:nth-child(2n+1) {
@@ -63,6 +69,10 @@ a:visited, a:hover {
 
 
 /* specific entities */
+
+header .row {
+  align-items: center;
+}
 
 header img {
   min-width: 250px;
@@ -97,11 +107,27 @@ header a.cta::after {
   font-size: 1.5em;
 }
 
+nav > * {
+  margin: 0 0.5em;
+}
+
 nav .logo {
   flex-grow: 1;
 }
 nav a, nav a:visited {
   color: #373938;
+}
+nav a:hover, nav a.hl {
+  color: #e8862e;
+}
+
+nav svg {
+  height: 2em;
+  vertical-align: middle;
+}
+
+nav a:hover svg polygon {
+  fill: #e8862e;
 }
 
 .main {
